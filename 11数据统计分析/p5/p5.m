@@ -1,19 +1,22 @@
-%炮弹射击
-% 定义参数
-mu = [0 0]; %均值，目标中心
-sigma = [80^2, 80*50*0.4; 80*50*0.4, 50^2]; %协方差矩阵
-r = 100; % 圆形区域半径
+function hitProbability = calculateHitProbability()
 
-% 定义二维正态分布
-pd = mvnrnd(mu, sigma, 1e6);
+% 参数设定
+mu = [0, 0];       % 均值
+sigma = [80^2, 80*50*0.4; 80*50*0.4, 50^2]; % 协方差矩阵
+target_radius = 100; % 目标区域半径
+nSimulations = 1e6; % 模拟次数
 
-% 计算点到圆心的距离
-d = sqrt(pd(:,1).^2 + pd(:,2).^2);
+% 使用蒙特卡罗法模拟炮弹落点
+R = chol(sigma);   % Cholesky分解得到上三角矩阵
+Z = repmat(mu,nSimulations,1) + randn(nSimulations,2)*R;
 
-% 计算在圆形区域内的点的数量
-in_circle = sum(d <= r);
+% 计算落点到目标中心的距离
+distances = sqrt(Z(:,1).^2 + Z(:,2).^2);
 
-% 计算炮弹落在圆形区域内的概率
-prob = in_circle / 1e6;
+% 计算命中目标区域的次数
+hitCounts = sum(distances <= target_radius);
 
-disp(prob)
+% 计算命中概率
+hitProbability = hitCounts / nSimulations;
+
+end
