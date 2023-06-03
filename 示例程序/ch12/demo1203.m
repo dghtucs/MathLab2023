@@ -1,0 +1,12 @@
+xbar=119.35;ybar=114.79;s1=10.77;s2=8.28;m=66;n=62;alpha=0.05;tail=0;
+[h1,sig1]=pttest2(xbar,ybar,s1,s2,m,n,alpha,tail)
+xbar=76.83;ybar=72.87;s1=8.45;s2=6.2;m=66;n=62;alpha=0.05;tail=0;
+[h2,sig2]=pttest2(xbar,ybar,s1,s2,m,n,alpha,tail)
+xbar=122.7;ybar=117.6;s1=11.36;s2=8.71;m=66;n=62;alpha=0.05;tail=0;
+[h3,sig3]=pttest2(xbar,ybar,s1,s2,m,n,alpha,tail)
+xbar=79.52;ybar=75.44;s1=8.75;s2=6.8;m=66;n=62;alpha=0.05;tail=0;
+[h4,sig4]=pttest2(xbar,ybar,s1,s2,m,n,alpha,tail)
+xbar=109.95;ybar=107.1;s1=10.78;s2=10.11;m=66;n=62;alpha=0.05;tail=0;
+[h5,sig5]=pttest2(xbar,ybar,s1,s2,m,n,alpha,tail)
+xbar=69.35;ybar=65.84;s1=8.6;s2=7.03;m=66;n=62;alpha=0.05;tail=0;
+[h5,sig5]=pttest2(xbar,ybar,s1,s2,m,n,alpha,tail)
