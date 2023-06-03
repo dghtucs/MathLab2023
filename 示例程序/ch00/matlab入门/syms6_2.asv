@@ -31,27 +31,6 @@ symsum(1/x^2,x,2,inf)
 
 
 % 泰勒多项式
-taylor(exp(x),x,2,'order',9)
-
-taylor(log(x),x,2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+taylor(exp(x))
 
 
